@@ -147,12 +147,13 @@ function forgeTheFellowShip () {
   var ulElement = document.createElement('ul')
   var hobbits = document.querySelectorAll('li')
 
-  hobbits.forEach(function (hobbit) {
-    ulElement.appendChild(hobbit)
-  })
-
   divElement.appendChild(ulElement)
   rivendell.appendChild(divElement)
+
+  hobbits.forEach(function (hobbit) {
+    ulElement.appendChild(hobbit)
+    alert(hobbit.textContent + ' has joined the party')
+  })
 }
 
 forgeTheFellowShip()
@@ -175,7 +176,7 @@ function theBalrog () {
   })
 }
 
-// theBalrog()
+theBalrog()
 // Part 9
 
 function hornOfGondor () {
@@ -196,10 +197,6 @@ function hornOfGondor () {
 
 hornOfGondor()
 // Part 10
-
-function findh1InMordor () {
-
-}
 
 function itsDangerousToGoAlone () {
   // take Frodo and Sam out of the fellowship and move them to Mordor
@@ -285,19 +282,17 @@ function thereAndBackAgain () {
 
 //
   var fellowship = document.getElementById('the-fellowship')
+  var aside = document.querySelector('aside')
   var ulElement = fellowship.getElementsByTagName('ul')
-console.log("ulElement: " + ulElement)
+  console.log('ulElement: ' + ulElement)
   console.log(everyOne)
   everyOne.forEach(function (me) {
     if (me.className === 'hobbit') {
     // move to shire
       shire.appendChild(me)
-    // console.log(me)
-    } else {
-    // remove buddies
-      // console.log('li: ' + me)
     }
   })
+  aside.removeChild(fellowship)
 }
 
 thereAndBackAgain()
